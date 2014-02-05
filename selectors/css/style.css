@@ -1,0 +1,104 @@
+/**
+ The MIT License (MIT)
+
+ Copyright (c) 2014 AICONOA
+
+ Permission is hereby granted, free of charge, to any person obtaining a copy
+ of this software and associated documentation files (the "Software"), to deal
+ in the Software without restriction, including without limitation the rights
+ to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ copies of the Software, and to permit persons to whom the Software is
+ furnished to do so, subject to the following conditions:
+
+ The above copyright notice and this permission notice shall be included in
+ all copies or substantial portions of the Software.
+
+ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+ THE SOFTWARE.
+ */
+
+body {
+    padding-top:50px;
+}
+
+#demo {
+    margin-bottom: 30px;
+}
+
+h1 {
+    margin-top:0px;
+    margin-bottom:30px;
+}
+
+/** ATTRIBUTES **/
+[someattr^="beg"] { /** begins with "beg" **/
+    border:1px solid red;
+}
+
+[someattr$="nd"] { /** ends with "nd" **/
+    background-color:pink;
+}
+
+[someattr*="ddl"] { /** contains "ddl" **/
+    font-style: italic;
+}
+
+
+/* <NOT CSS3> */
+[someattr~="two"] { /** one of the words is "two" **/
+    text-decoration: underline;
+}
+
+[someattr|="fr"] { /** contains a list of hyphenated words that begin with "fr" **/
+    color:blue;
+}
+/* </NOT CSS3> */
+
+/** ADJACENCY **/
+h3~p {
+    color:red;
+}
+
+/** PSEUDO-CLASSES **/
+tr:nth-child(odd) {
+    background-color:#ddd;
+}
+td:nth-child(even) {
+    font-weight: bold;
+}
+
+tr:nth-child(2n) {
+    color:green;
+}
+
+tr:first-child, tr:last-child { /** first-child is CSS2 **/
+    background-color: #bb9288;
+}
+
+tr>td:nth-of-type(2n+1) {
+    text-decoration: underline;
+}
+
+tr :not(td) {   /** descendents of tr that are not td **/
+    color:blue;
+}
+
+/** PSEUDO-ELEMENTS **/
+#p1::first-line { /** in CSS 3 pseudo elements start with :: **/
+    background-color: #fd41ff;
+}
+#p2::before {
+    content: "This text has been generated with ::before and is not part of the dom tree";
+    background-color: #ff7453;
+    margin:10px;
+}
+
+#p2::selection {
+    background-color: #31d51e;
+    color:white;
+}
