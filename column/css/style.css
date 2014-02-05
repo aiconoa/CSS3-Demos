@@ -35,10 +35,15 @@ header h1 {
     margin-bottom:30px;
 }
 
-.opensans * {
-    font-family: 'Open Sans', sans-serif;
-}
-
-.roboto * {
-    font-family: 'Roboto', sans-serif;
+#demos h1+div {
+    /*column-width:20em;*/
+    /*column-count: 3;*/
+    -moz-columns:3 20em;
+    -moz-column-gap:5em;
+    -webkit-columns:3 20em;
+    -webkit-column-gap:5em;
+    columns:3 20em;
+    column-gap:5em;
+    /*height:100px;*/
+    /*overflow: auto;*/
 }
